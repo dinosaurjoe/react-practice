@@ -12,6 +12,9 @@ class App extends Component {
           <h1 className="App-title">Social Cards</h1>
         </header>
         <SocialCard />
+        <SocialCard />
+        <SocialCard />
+        <SocialCard />
       </div>
     );
   }

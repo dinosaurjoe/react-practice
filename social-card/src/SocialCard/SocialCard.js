@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import "./SocialCard.css";
 
 class SocialCard extends Component {
     render() {
         return (
             <div className="social-card">
-                <img src={'http://placehold.it/400x20&text=slide1'} 
-                alt="profile picture" 
+                <img src={'http://placehold.it/20x20&text=slide1'} 
+                alt="profile" 
                 className="profile-picture"/>
                 <h2 className="user-name">
                     Joe Schafer
