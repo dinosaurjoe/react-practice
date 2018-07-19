@@ -20,12 +20,22 @@ class App extends Component {
     this.setState({userInput: updatedText});
   }
 
+
+
   render() {
     const charList = this.state.userInput.split('').map((ch, index) => {
+      
+      const classes = ["char"]
+
+      if (this.state.userInput.length > 1) {
+        classes.push("blue");
+      }
+
       return <Char
               character={ch}
               key={index}
-              clicked ={() => this.deleteCharHandler(index)} />;
+              clicked ={() => this.deleteCharHandler(index)}
+              class={classes.join(' ')} />;
     });
 
     return (
