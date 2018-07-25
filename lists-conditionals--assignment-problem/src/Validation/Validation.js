@@ -14,4 +14,4 @@ const validation = ( props ) => {
     );
 }
 
-export default validation
+export default validation;
