@@ -17,6 +17,14 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'http://localhost:3000'
+    resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
+  end
+end
+
+
 module IdeaboardApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
