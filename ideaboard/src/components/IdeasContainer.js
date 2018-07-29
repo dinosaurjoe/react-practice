@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Idea from './Idea'
+
 
 
 class IdeasContainer extends Component {
@@ -24,12 +26,7 @@ class IdeasContainer extends Component {
     return (
       <div>
         {this.state.ideas.map((idea) => {
-          return(
-            <div className="tile" key={idea.id} >
-              <h4>{idea.title}</h4>
-              <p>{idea.body}</p>
-            </div>
-          )
+          return (<Idea idea={idea} key={idea.id} />)
         })}
       </div>
     );
