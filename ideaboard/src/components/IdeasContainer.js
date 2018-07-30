@@ -10,7 +10,8 @@ class IdeasContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ideas: []
+      ideas: [],
+      editingIdeaId: null
     }
   }
 
@@ -34,11 +35,13 @@ class IdeasContainer extends Component {
       }
     )
     .then(response => {
-      console.log(response)
       const ideas = update(this.state.ideas, {
         $splice: [[0, 0, response.data]]
       })
-      this.setState({ideas: ideas})
+      this.setState({
+        ideas: ideas,
+        editingIdeaId: response.data.id
+      })
     })
     .catch(error => console.log(error))
   }
