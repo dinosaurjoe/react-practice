@@ -13,7 +13,8 @@ class IdeasContainer extends Component {
     super(props)
     this.state = {
       ideas: [],
-      editingIdeaId: null
+      editingIdeaId: null,
+      notification: ''
     }
   }
 
@@ -53,7 +54,8 @@ class IdeasContainer extends Component {
     const ideas = update(this.state.ideas, {
       [ideaIndex]: { $set: idea }
     })
-    this.setState({ideas: ideas})
+    this.setState({ideas: ideas,
+    notification: 'All changes saved'})
   }
 
   render() {
@@ -70,6 +72,10 @@ class IdeasContainer extends Component {
           onClick={this.addNewIdea} >
           New Idea
         </button>
+
+        <span className="notification">
+        {this.state.notification}
+        </span>
       </div>
     );
   }
